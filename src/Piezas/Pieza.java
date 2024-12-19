@@ -2,15 +2,15 @@ package Piezas;
 
 public abstract class Pieza {
   
-  private boolean estado;
-  private boolean color;
+  private boolean estado; //El valor significará que esa pieza ha caído y el true que está en pie
+  private boolean color; //El valor False será tomado como color negro y el True como Blanco
   private int posicionFila;
   private int posicionColumna;
   private String nombre;
   
   
   
-  public Pieza(,String nombre,boolean estado, boolean color,  int posicionFila,
+  public Pieza(String nombre,boolean estado, boolean color,  int posicionFila,
       int posicionColumna) {
     super();
     this.nombre = nombre;
@@ -19,6 +19,14 @@ public abstract class Pieza {
     this.posicionFila = posicionFila;
     this.posicionColumna = posicionColumna;
   }
+  
+  /*
+   * Metodo para mover pieza a lo largo del tablero
+   * */
+  public abstract void moverPieza(int posicionFila,int posicionColumna,String[][] tablero);
+  
+  public abstract boolean comprobarMovimiento(int posI,int posJ,String[][] tablero);
+   
   
   public void setNombre(String nombre) {
     this.nombre = nombre;
@@ -54,5 +62,18 @@ public abstract class Pieza {
     this.posicionColumna = posicionColumna;
   }
   
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) return true;
+    if (obj == null || getClass() != obj.getClass()) return false;
+    Pieza pieza = (Pieza) obj;
+    
+    return nombre.equals(pieza.getNombre()) && posicionFila == pieza.getPosicionFila() && posicionColumna == pieza.getPosicionColumna();
+      
+  }
   
+  @Override
+  public String toString() {
+    return "Nombre: "+this.nombre+ " posicion I: "+posicionFila+" Posicion J: "+posicionColumna;
+  }
 }
