@@ -25,7 +25,7 @@ public abstract class Pieza {
    * */
   public abstract void moverPieza(int posicionFila,int posicionColumna,String[][] tablero);
   
-  public abstract boolean comprobarMovimiento(int posI,int posJ,String[][] tablero);
+  public abstract boolean comprobarMovimiento(int posI,int posJ,String[][] tablero,boolean turno);
    
   
   public void setNombre(String nombre) {
