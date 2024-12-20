@@ -23,7 +23,11 @@ public abstract class Pieza {
   /*
    * Metodo para mover pieza a lo largo del tablero
    * */
-  public abstract void moverPieza(int posicionFila,int posicionColumna,String[][] tablero);
+  public  void moverPieza(int posicionFilaSolicitada,int posicionColumnaSolicitada,String[][] tablero) {
+    tablero[posicionFilaSolicitada][posicionColumnaSolicitada] = this.getNombre();
+    this.setPosicionFila(posicionFilaSolicitada);
+    this.setPosicionColumna(posicionColumnaSolicitada);
+  }
   
   public abstract boolean comprobarMovimiento(int posI,int posJ,String[][] tablero,boolean turno);
    

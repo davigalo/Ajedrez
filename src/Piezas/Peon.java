@@ -6,12 +6,7 @@ public class Peon extends Pieza {
     super(nombre, estado, color, posicionFila, posicionColumna);
   }
 
-  @Override
-  public void moverPieza(int posicionFilaSolicitada, int posicionColumnaSolicitada, String[][] tablero) {
-     tablero[posicionFilaSolicitada][posicionColumnaSolicitada] = this.getNombre();
-     this.setPosicionFila(posicionFilaSolicitada);
-     this.setPosicionColumna(posicionColumnaSolicitada);
-     }
+ 
   
   @Override
   public boolean comprobarMovimiento(int posI,int posJ,String[][] tablero,boolean turno) {

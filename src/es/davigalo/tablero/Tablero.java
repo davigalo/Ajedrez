@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import Piezas.Caballo;
 import Piezas.Peon;
 import Piezas.Pieza;
+import Piezas.Torre;
 
 public class Tablero {
 
@@ -27,8 +28,12 @@ public class Tablero {
       for (j = 0; j < NUM_COLUMNAS; j++) {
         if (i == 0 && j == 0 || i == 0 && j == NUM_COLUMNAS - 1) {
           tablero[i][j] = "T2";
+          Torre torreNegra = new Torre("T2",true,false,i,j);
+          piezasNegrasList.add(torreNegra);
         } else if (i == NUM_FILAS - 1 && j == 0 || i == NUM_FILAS - 1 && j == NUM_COLUMNAS - 1) {
           tablero[i][j] = "T1";
+          Torre torreBlanca = new Torre("T1",true,true,i,j);
+          piezasBlancasList.add(torreBlanca);
         } else if (i == 1) {
           tablero[i][j] = "P2";
           Peon peonNegro = new Peon("P2", true, false, i, j);

@@ -7,11 +7,7 @@ public class Torre extends Pieza {
     super(nombre,estado, color, posicionFila, posicionColumna);
   }
 
-  @Override
-  public void moverPieza(int posicionFila, int posicionColumna, String[][] tablero) {
-    // TODO Auto-generated method stub
-    
-  }
+ 
 
   @Override
   public boolean comprobarMovimiento(int posI, int posJ, String[][] tablero, boolean turno) {
@@ -22,14 +18,8 @@ public class Torre extends Pieza {
       result = false;
     } 
     
-    if (turno) {
-       if(posI != this.getPosicionFila()-1 || posJ != this.getPosicionColumna()) {
-        result = false;
-      }
-    } else if (!turno) {
-      if(posI != this.getPosicionFila()+1 || posJ != this.getPosicionColumna()) {
-        result = false;
-      }
+    if (posI != this.getPosicionFila() && posJ != this.getPosicionColumna()) {
+      result = false;
     }
      
    
